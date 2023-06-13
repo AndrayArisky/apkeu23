@@ -34,21 +34,16 @@ class _namaAkunState extends State<namaAkun> {
   Widget build(BuildContext context) {
     var getdata;
     return Scaffold(
+      /*
       appBar: AppBar(
         title: Text(
           'Daftar Nama Akun'
         ),
       ),
+      */
       body: Data.isEmpty ? Center(
         child: CircularProgressIndicator()) : ListView(
-          
           children: [
-            Padding(
-              padding: EdgeInsets.all(16.0),
-              child: Text(
-                'Kelompok '
-              ),
-            ),
             DataTable(
               columns: [
                 DataColumn(label: Text('Kode Akun')),

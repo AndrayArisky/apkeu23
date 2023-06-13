@@ -1,7 +1,7 @@
 import 'dart:convert';
-import 'package:apkeu23/karyawanPage.dart';
+import 'package:apkeu23/karyawanPages/karyawanPage.dart';
 import 'package:apkeu23/navBar.dart';
-import 'package:apkeu23/regisPage.dart';
+import 'package:apkeu23/pages/regisPage.dart';
 import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
 

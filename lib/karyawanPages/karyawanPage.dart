@@ -9,6 +9,7 @@ class Karyawan_Page extends StatelessWidget {
         title: Text("Halaman Karyawan"), // Judul AppBar
         automaticallyImplyLeading: false,
         actions: [
+          /*
           TextButton(
             onPressed: () {
               Navigator.pushAndRemoveUntil(
@@ -23,6 +24,18 @@ class Karyawan_Page extends StatelessWidget {
               ),
             ),
           ),
+          */
+          PopupMenuButton(
+            itemBuilder: (BuildContext context) {
+              return [
+                PopupMenuItem(child: Text('Laporan Laba Rugi')),
+                PopupMenuItem(child: Text('Laporan Posisi Keuangan')),
+                PopupMenuItem(child: Text('')),
+                PopupMenuItem(child: Text('Laporan Laba Rugi')),
+              ];
+            }
+          )
+        
         ],
       ),
       body: Center(

@@ -1,5 +1,6 @@
 import 'dart:convert';
-import 'package:apkeu23/inputTransaksiPage.dart';
+
+import 'package:apkeu23/pages/inputTransaksiPage.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:intl/date_symbol_data_local.dart';
@@ -106,11 +107,13 @@ class _transaksiPageState extends State<transaksiPage> {
         length: 1,
         initialIndex: 0,                                                                                                                                                                                                                                                                                                          
         child: Scaffold(
+          /*
           appBar: AppBar(
             title: Text(
               'Riwayat Transaksi'
             ),
           ),
+          */
           body: Center(
             child: Text(
               'Membaca riwayat transaksi',
@@ -217,7 +220,7 @@ class _transaksiPageState extends State<transaksiPage> {
                                 width: 45,
                                 child: Icon(
                                   Icons.download,
-                                  color: Colors.blue,
+                                  color: Colors.green,
                                   size: 40,
                                 ),
                               ),
@@ -266,6 +269,7 @@ class _transaksiPageState extends State<transaksiPage> {
                        ],
                       )
                     ),
+                    
                     SizedBox(height: 20),
                     Expanded(
                       child: ListView.separated(
@@ -290,29 +294,35 @@ class _transaksiPageState extends State<transaksiPage> {
                                     // borderRadius: BorderRadius.circular(8.0),
                                   ),
                                   */
-                                  child: ListTile(
-                                 
-                                    title: Text(
-                                      date,
-                                      style: TextStyle(
-                                        fontWeight: FontWeight.bold,
-                                        fontSize: 14,
-                                      ),
-                                      textAlign: TextAlign.left,
-                                    ),
-                                    trailing: Row(
-                                      mainAxisSize: MainAxisSize.min,
-                                      children: [
-                                        Text(
-                                          '${rupiah.format(kasHarian)}',
+                                  
+                                  child: Column(
+                                    children: [
+                                      ListTile(
+                                        title: Text(
+                                          date,
                                           style: TextStyle(
                                             fontWeight: FontWeight.bold,
                                             fontSize: 14,
                                           ),
-                                          textAlign: TextAlign.right
+                                          textAlign: TextAlign.left,
                                         ),
-                                      ],
-                                    ),
+                                        /*
+                                        trailing: Row(
+                                          mainAxisSize: MainAxisSize.min,
+                                          children: [
+                                            Text(
+                                              '${rupiah.format(kasHarian)}',
+                                              style: TextStyle(
+                                                fontWeight: FontWeight.bold,
+                                                fontSize: 14,
+                                              ),
+                                              textAlign: TextAlign.right
+                                            ),
+                                          ],
+                                        ),
+                                        */
+                                      ),
+                                    ],
                                   ),
                                   
                                 ),
@@ -332,7 +342,7 @@ class _transaksiPageState extends State<transaksiPage> {
                                         children: [
                                           transactions[index]['status'] ==  'Pemasukan'
                                               ? Icon(Icons.download,
-                                                  color: Colors.blue)
+                                                  color: Colors.green)
                                               : Icon(Icons.upload,
                                                   color: Colors.red),
                                           SizedBox(width: 20.0),
@@ -342,10 +352,16 @@ class _transaksiPageState extends State<transaksiPage> {
                                                   CrossAxisAlignment.start,
                                               children: [
                                                 Text(
-                                                    '${transactions[index]['status']}'),
+                                                  '${transactions[index]['kategori']}',
+                                                  style: TextStyle(
+                                                    fontSize: 14,
+                                                    fontWeight: FontWeight.bold,
+                                                  ),
+                                            ),
                                                 SizedBox(height: 0.0),
                                                 Text(
-                                                    'Keterangan : ${transactions[index]['keterangan']}'),
+                                                  'Keterangan : ${transactions[index]['keterangan']}'
+                                                ),
                                               ],
                                             ),
                                           ),
@@ -386,7 +402,8 @@ class _transaksiPageState extends State<transaksiPage> {
                 Navigator.pushReplacement(
                   context,
                   MaterialPageRoute(builder: (context) => tambahTransaksi()));
-              }),
+              }
+          ),
         ),
       );
     }

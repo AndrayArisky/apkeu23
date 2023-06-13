@@ -1,9 +1,12 @@
 import 'package:apkeu23/inputTransaksi/tabBarInput.dart';
-import 'package:apkeu23/namaAkunPage.dart';
+import 'package:apkeu23/loginPage.dart';
+import 'package:apkeu23/pages/inputTransaksiPage.dart';
 import 'package:apkeu23/navBar.dart';
-import 'package:apkeu23/nmAkunPage.dart';
+import 'package:apkeu23/karyawanPages/karyawanPage.dart';
+import 'package:apkeu23/pages/namaAkunPage.dart';
+import 'package:apkeu23/adminPages/profilAdmin.dart';
 import 'package:apkeu23/splash.dart';
-import 'package:apkeu23/transaksiPage.dart';
+import 'package:apkeu23/pages/riwayatTransaksiPage.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -19,7 +22,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       title: "Aplikasi Keuangan UMKM",
-      home: transaksi()
+      home: loginPage()
     );
   }
 }
